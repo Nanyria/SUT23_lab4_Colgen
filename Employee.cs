@@ -8,6 +8,8 @@ namespace SUT23_lab4_Colgen
 {
     internal class Employee
     {
+        public static Stack<Employee> EmplSt = new Stack<Employee>();
+        
         public int _id { get; set; }
         public string _name { get; set; }
         public string _gender { get; set; }
