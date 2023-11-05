@@ -8,7 +8,7 @@ namespace SUT23_lab4_Colgen
         static void Main(string[] args)
         {
 
-            PrintStack();
+            PopStack();
 
             Console.ReadKey();
 
@@ -42,8 +42,26 @@ namespace SUT23_lab4_Colgen
                     $"\nName: {e._name}" +
                     $"\nGender: {e._gender}" +
                     $"\nSalary: {e._salary}" +
-                    $"\nItems left in stack: {count - 1}\n");
-                count--;
+                    $"\nItems left in stack: {count}\n");
+            }
+        }
+        static public void PopStack()
+        {
+            AddStack();
+            Stack<Employee> Employees = Employee.EmplSt;
+            int count = Employees.Count();
+
+            for (int i = 0; i < count; i++)
+            {
+                int count2 = Employees.Count();
+                Employee empop = Employees.Pop();
+                Console.WriteLine($"ID-number: {empop._id}" +
+                    $"\nName: {empop._name}" +
+                    $"\nGender: {empop._gender}" +
+                    $"\nSalary: {empop._salary}" +
+                    $"\nItems left in stack: {count2-1}\n");
+                
+
             }
         }
     }
