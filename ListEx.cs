@@ -17,7 +17,7 @@ namespace SUT23_lab4_Colgen
 
         /// <summary>
         /// Går kanske att lägga denna på ett ställe så att den bara behöver deklareras
-        ///en gång istället för flera. 
+        ///en gång istället för flera?
         /// </summary>
         static public void EmpInfo()
         {
