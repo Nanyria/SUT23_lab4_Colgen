@@ -11,7 +11,8 @@ namespace SUT23_lab4_Colgen
             //Stack.PopStack();
             //Stack.AddStack();
             //Stack.Peek();
-            Stack.Check();
+            //Stack.Check();
+            ListEx.FindEm();
 
             Console.ReadKey();
 
