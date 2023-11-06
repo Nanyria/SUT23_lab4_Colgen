@@ -4,35 +4,44 @@ namespace SUT23_lab4_Colgen
 {
     internal class Program
     {
-        
+        static Stack<Employee> Employees = Employee.EmplSt;
+        static Employee em1;
+        static Employee em2;
+        static Employee em3;
+        static Employee em4;
+        static Employee em5;
         static void Main(string[] args)
         {
 
-            PopStack();
+            //PopStack();
+            //AddStack();
+            //Peek();
+            Check();
 
             Console.ReadKey();
 
 
         }
-        static public void AddStack()
+        static public void EmpInfo()
         {
-            Employee e1 = new Employee(001, "Lars", "Male", 22000);
-            Employee e2 = new Employee(002, "Mia", "Female", 33000);
-            Employee e3 = new Employee(003, "Kim", "Non-Binary", 30000);
-            Employee e4 = new Employee(004, "Allan", "Male", 27000);
-            Employee e5 = new Employee(005, "Jasmine", "Female", 25000);
+            em1 = new Employee(001, "Lars", "Male", 22000);
+            em2 = new Employee(002, "Mia", "Female", 33000);
+            em3 = new Employee(003, "Kim", "Non-Binary", 30000);
+            em4 = new Employee(004, "Allan", "Male", 27000);
+            em5 = new Employee(005, "Jasmine", "Female", 25000);
 
-            Stack<Employee> Employees = Employee.EmplSt;
-
-            Employees.Push(e1);
-            Employees.Push(e2);
-            Employees.Push(e3);
-            Employees.Push(e4);
-            Employees.Push(e5);
+        }
+        static public void PushEm()
+        {
+            Employees.Push(em1);
+            Employees.Push(em2);
+            Employees.Push(em3);
+            Employees.Push(em4);
+            Employees.Push(em5);
         }
         static public void PrintStack()
         {
-            AddStack();
+            PushEm();   
             Stack<Employee> Employees = Employee.EmplSt;
             int count = Employees.Count();
 
@@ -47,8 +56,7 @@ namespace SUT23_lab4_Colgen
         }
         static public void PopStack()
         {
-            AddStack();
-            Stack<Employee> Employees = Employee.EmplSt;
+            PushEm();
             int count = Employees.Count();
 
             for (int i = 0; i < count; i++)
@@ -60,9 +68,39 @@ namespace SUT23_lab4_Colgen
                     $"\nGender: {empop._gender}" +
                     $"\nSalary: {empop._salary}" +
                     $"\nItems left in stack: {count2-1}\n");
-                
-
             }
         }
+        static public void Peek()
+        {
+            PushEm();
+            int count = Employees.Count();
+            Employee peekEm = Employees.Peek();
+
+            Console.WriteLine($"ID-number: {peekEm._id}" +
+               $"\nName: {peekEm._name}" +
+               $"\nGender: {peekEm._gender}" +
+               $"\nSalary: {peekEm._salary}" +
+               $"\nItems left in stack: {count - 1}\n");
+            Console.WriteLine($"ID-number: {peekEm._id}" +
+               $"\nName: {peekEm._name}" +
+               $"\nGender: {peekEm._gender}" +
+               $"\nSalary: {peekEm._salary}" +
+               $"\nItems left in stack: {count - 1}\n");
+
+        }
+        static public void Check()
+        {
+            PushEm();
+            if (Employees.Contains(em3))
+            {
+                Console.WriteLine("Employee E3 is in the list.");
+            }
+            else
+            {
+                Console.WriteLine("Employee E3 is not in the list.");
+            }
+
+        }
+
     }
 }
